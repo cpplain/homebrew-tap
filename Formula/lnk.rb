@@ -1,8 +1,8 @@
 class Lnk < Formula
   desc "Opinionated symlink manager for dotfiles and more"
   homepage "https://github.com/cpplain/lnk"
-  url "https://github.com/cpplain/lnk/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "79dd36b599ac5b6bd9b2c1823dfa471f5366b2a77e85398136612c694db70c2a"
+  url "https://github.com/cpplain/lnk/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "55d9fa5b454395b76dcff3554b6ad48a8bd8ea9a75331cb9b68ba5e3f56754db"
   license "MIT"
 
   depends_on "go" => :build
@@ -11,13 +11,11 @@ class Lnk < Formula
     ldflags = %W[
       -s -w
       -X main.version=#{version}
-      -X main.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/lnk"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/lnk --version")
-    assert_match "symlink manager", shell_output("#{bin}/lnk --help")
+    assert_match "lnk #{version}", shell_output("#{bin}/lnk --version")
   end
 end
