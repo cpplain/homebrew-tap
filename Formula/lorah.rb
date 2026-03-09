@@ -1,8 +1,8 @@
 class Lorah < Formula
   desc "Long-running agent harness"
   homepage "https://github.com/cpplain/lorah"
-  url "https://github.com/cpplain/lorah/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "d6edc0c6f1b76d0aedfb6cbb2511b8e9a5c6920677e51b4a66f94f4c1f651692"
+  url "https://github.com/cpplain/lorah/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "e11a4e3f343d4b686d4acb7bf169f856e465ed403950d03e3529207898cf02fc"
   license "MIT"
 
   depends_on "go" => :build
